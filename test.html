@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>flash-sound-player test</title>
+    <script>
+    window.playDemoSound = function() {
+      document.getElementById("flash_sound_player").playSoundFromUrl("http://assets.sauspiel.de/sounds/male/allgaeuerisch/greeting/begruessung-1.mp3");
+    }
+    window.onload = function(evt) {
+      window.setTimeout("playDemoSound()", 500)
+    }
+    </script>
+  </head>
+  <body>
+    <object id="flash_sound_player" type="application/x-shockwave-flash" data="flash_sound_player.swf" width="0" height="0" allowscriptaccess="always">
+      <p>You should not see this if flash is working</p>
+    </object>
+  </body>
+</html>
