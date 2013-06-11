@@ -17,12 +17,21 @@ Use javascript to play a sound:
 
 Be sure to have a `crossDomain.xml` file on the host that allows the loading of the sound files, for more information see the [Adobe Developer Conneciton site](http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html).
 
+Need to detect Flash first? There you go.
+
+    var hasFlash = false;
+    try {
+      ao = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+      hasFlash = ao != null;
+    } catch (e) {
+      hasFlash = navigator.mimeTypes["application/x-shockwave-flash"] !== void 0;
+    }
 
 ## Building
 Get the [Flex SDK](http://www.adobe.com/devnet/flex/flex-sdk-download-all.html), and set `FLEX_HOME`, e.g.:
 
     export FLEX_HOME=~/Downloads/flex_sdk_4
- 
+
 and run `./build.sh`.
 
 
